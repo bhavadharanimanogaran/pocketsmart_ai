@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+Party Planner · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="form-page">
+
+    <div>
+
+        <p class="eyebrow">
+            PARTY BUDGET PLANNER
+        </p>
+
+        <h1>
+            Plan the celebration.
+        </h1>
+
+        <p class="lead">
+            Set the guest count and event
+            context so the AI can split
+            your budget into useful categories.
+        </p>
+
+    </div>
+
+
+    <form class="planner-form" method="post" action="/generate-party">
+
+        <label>
+
+            Total budget (INR)
+
+            <input name="budget" type="number" min="1" required placeholder="50000">
+
+        </label>
+
+
+        <label>
+
+            Number of guests
+
+            <input name="guests" type="number" min="1" required placeholder="50">
+
+        </label>
+
+
+        <label>
+
+            Event type
+
+            <input name="event_type" required placeholder="Birthday, corporate, wedding...">
+
+        </label>
+
+
+        <label>
+
+            Venue details
+
+            <input name="venue" required placeholder="Home, hall, restaurant, city...">
+
+        </label>
+
+
+        <label>
+
+            Preferences
+
+            <textarea name="preferences"
+                placeholder="Vegetarian food, simple decor, music, accommodation..."></textarea>
+
+        </label>
+
+
+        <button class="btn primary" type="submit">
+            Generate Party Plan ✨
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

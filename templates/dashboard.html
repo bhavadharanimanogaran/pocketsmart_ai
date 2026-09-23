@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-head">
+
+    <div>
+
+        <p class="eyebrow">
+            DASHBOARD
+        </p>
+
+        <h1>
+            Hello, {{ user.name }} 👋
+        </h1>
+
+        <p class="lead">
+            Choose a planner and turn
+            a budget into a practical plan.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="grid-3">
+
+    <a class="card planner-card" href="/home-planner">
+
+        <span class="icon">
+            🏠
+        </span>
+
+        <h3>
+            Home Interior
+        </h3>
+
+        <p>
+            Plan a room-by-room setup.
+        </p>
+
+    </a>
+
+
+    <a class="card planner-card" href="/party-planner">
+
+        <span class="icon">
+            🎉
+        </span>
+
+        <h3>
+            Party
+        </h3>
+
+        <p>
+            Build an event budget.
+        </p>
+
+    </a>
+
+
+    <a class="card planner-card" href="/jewelry-planner">
+
+        <span class="icon">
+            💎
+        </span>
+
+        <h3>
+            Jewelry
+        </h3>
+
+        <p>
+            Match accessories
+            to an occasion.
+        </p>
+
+    </a>
+
+</div>
+
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Recent plans
+        </h2>
+
+        <a href="/history">
+            View all
+        </a>
+
+    </div>
+
+
+    {% if history %}
+
+    <div class="table">
+
+        {% for item in history %}
+
+        <div class="table-row">
+
+            <span>
+                {{ item.planner_type|title }}
+            </span>
+
+            <span>
+                ₹{{ "{:,}".format(item.budget) }}
+            </span>
+
+            <span>
+                {{ item.created_at.strftime("%d %b %Y") }}
+            </span>
+
+            <a href="/recommendations-details/{{ item.id }}">
+                Open
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="empty">
+        No plans yet.
+        Start with a planner above.
+    </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

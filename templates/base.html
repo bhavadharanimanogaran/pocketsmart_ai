@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="PocketSmart AI - Your Smart Budget & Recommendation Assistant">
+
+    <title>
+        {% block title %}
+        PocketSmart AI
+        {% endblock %}
+    </title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="/static/CSS/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+
+    <header class="site-header">
+
+        <div class="nav-wrapper">
+
+            <!-- Logo -->
+            <a class="brand" href="/">
+
+                <span class="brand-icon">✦</span>
+
+                <span class="brand-name">
+                    PocketSmart
+                </span>
+
+                <span class="brand-ai">
+                    AI
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+            <nav class="main-nav">
+
+                {% if user %}
+
+                <!-- Dashboard -->
+                <a href="/dashboard" class="nav-link">
+
+                    <span class="nav-icon">🏠</span>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <!-- History -->
+                <a href="/history" class="nav-link">
+
+                    <span class="nav-icon">🕘</span>
+
+                    <span>History</span>
+
+                </a>
+
+
+                <!-- Logout -->
+                <a href="/logout" class="nav-link logout-link">
+
+                    <span class="nav-icon">↪</span>
+
+                    <span>Logout</span>
+
+                </a>
+
+                {% else %}
+
+                <!-- Login -->
+                <a href="/login" class="nav-link">
+
+                    <span class="nav-icon">🔐</span>
+
+                    <span>Login</span>
+
+                </a>
+
+
+                <!-- Register -->
+                <a href="/register" class="nav-btn">
+
+                    <span>Get Started</span>
+
+                    <span class="btn-arrow">→</span>
+
+                </a>
+
+                {% endif %}
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="page-content">
+
+        <div class="container">
+
+
+            <!-- Error message -->
+
+            {% if error %}
+
+            <div class="alert alert-error">
+
+                <span class="alert-icon">⚠️</span>
+
+                <div class="alert-content">
+
+                    <strong>Something went wrong</strong>
+
+                    <p>{{ error }}</p>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- Success message -->
+
+            {% if success %}
+
+            <div class="alert alert-success">
+
+                <span class="alert-icon">✅</span>
+
+                <div class="alert-content">
+
+                    <strong>Success</strong>
+
+                    <p>{{ success }}</p>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- Individual page content -->
+
+            {% block content %}
+
+            {% endblock %}
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-wrapper">
+
+
+            <!-- Footer brand -->
+
+            <div class="footer-brand">
+
+                <a href="/" class="footer-logo">
+
+                    <span class="brand-icon">✦</span>
+
+                    <span>
+                        PocketSmart
+                    </span>
+
+                    <span class="brand-ai">
+                        AI
+                    </span>
+
+                </a>
+
+                <p>
+                    Your smart budget & recommendation assistant.
+                </p>
+
+            </div>
+
+
+
+            <!-- Footer navigation -->
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h4>
+                        Plan
+                    </h4>
+
+                    <a href="/home-planner">
+                        🏡 Home Planner
+                    </a>
+
+                    <a href="/party-planner">
+                        🎉 Party Planner
+                    </a>
+
+                    <a href="/jewelry-planner">
+                        💎 Jewelry Planner
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Account
+                    </h4>
+
+                    {% if user %}
+
+                    <a href="/dashboard">
+                        🏠 Dashboard
+                    </a>
+
+                    <a href="/history">
+                        🕘 History
+                    </a>
+
+                    <a href="/logout">
+                        ↪ Logout
+                    </a>
+
+                    {% else %}
+
+                    <a href="/login">
+                        🔐 Login
+                    </a>
+
+                    <a href="/register">
+                        ✨ Register
+                    </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Footer bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 PocketSmart AI
+            </p>
+
+            <p>
+                Budget smarter, choose better.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="/static/Js/app.js"></script>
+
+</body>
+
+</html>

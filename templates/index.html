@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+
+{% block title %}
+PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-badge" style="color:powderblue;">
+            ✨ GENAI BUDGET ASSISTANT
+        </p>
+
+        <h1>
+            Plan your lifestyle budget with AI.
+        </h1>
+
+        <p class="lead">
+            Get practical recommendations for
+            home interiors, parties and jewelry
+            while keeping your budget visible
+            from the start.
+        </p>
+
+        <div class="button-group">
+
+            <a class="btn btn-primary" href="/register">
+                🚀 Start Planning
+            </a>
+
+            <a class="btn btn-outline" href="#planners">
+                🔎 Explore Planners
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Hero visual -->
+
+    <div class="hero-card">
+
+        <div class="orb">
+            ₹
+        </div>
+
+        <h3>
+            One budget. Many choices.
+        </h3>
+
+        <p>
+            Gemini-powered reasoning +
+            structured recommendations +
+            provider search links.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PLANNER SECTION
+========================= -->
+
+<section id="planners" class="section">
+
+    <div class="section-heading">
+
+        <p class="hero-badge">
+            ✨ SMART PLANNING
+        </p>
+
+        <h2>
+            Choose your planner
+        </h2>
+
+        <p>
+            Pick what you want to plan and let
+            PocketSmart AI organize your budget.
+        </p>
+
+    </div>
+
+
+    <div class="grid-3">
+
+
+        <!-- HOME PLANNER -->
+
+        <a class="card planner-card home-card" href="/home-planner">
+
+            <span class="icon">
+                🏡
+            </span>
+
+            <h3>
+                Home Interior
+            </h3>
+
+            <p>
+                Plan furniture, lighting,
+                decor and storage according
+                to your budget.
+            </p>
+
+            <span class="card-link">
+                Plan Home →
+            </span>
+
+        </a>
+
+
+
+        <!-- PARTY PLANNER -->
+
+        <a class="card planner-card party-card" href="/party-planner">
+
+            <span class="icon">
+                🎉
+            </span>
+
+            <h3>
+                Party Planner
+            </h3>
+
+            <p>
+                Organize food, venue,
+                decoration and entertainment
+                within your budget.
+            </p>
+
+            <span class="card-link">
+                Plan Party →
+            </span>
+
+        </a>
+
+
+
+        <!-- JEWELLERY PLANNER -->
+
+        <a class="card planner-card jewelry-card" href="/jewelry-planner">
+
+            <span class="icon">
+                💎
+            </span>
+
+            <h3>
+                Jewelry Planner
+            </h3>
+
+            <p>
+                Get occasion and outfit-aware
+                jewelry styling recommendations.
+            </p>
+
+            <span class="card-link">
+                Plan Jewelry →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <p class="hero-badge">
+            💡 SIMPLE PROCESS
+        </p>
+
+        <h2>
+            How it works
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <!-- STEP 1 -->
+
+        <div class="step-card">
+
+            <span class="step-number">
+                01
+            </span>
+
+            <span class="step-icon">
+                💰
+            </span>
+
+            <h3>
+                Set a budget
+            </h3>
+
+            <p>
+                Tell PocketSmart what
+                you can spend.
+            </p>
+
+        </div>
+
+
+
+        <!-- STEP 2 -->
+
+        <div class="step-card">
+
+            <span class="step-number">
+                02
+            </span>
+
+            <span class="step-icon">
+                📝
+            </span>
+
+            <h3>
+                Describe your need
+            </h3>
+
+            <p>
+                Add rooms, guests,
+                occasion, style and preferences.
+            </p>
+
+        </div>
+
+
+
+        <!-- STEP 3 -->
+
+        <div class="step-card">
+
+            <span class="step-number">
+                03
+            </span>
+
+            <span class="step-icon">
+                🤖
+            </span>
+
+            <h3>
+                Get a plan
+            </h3>
+
+            <p>
+                Review AI suggestions,
+                allocations and shopping links.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

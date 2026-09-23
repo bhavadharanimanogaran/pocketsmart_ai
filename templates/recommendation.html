@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}
+Recommendations · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-head">
+
+    <div>
+
+        <p class="eyebrow">
+            {{ result.planner|upper }}
+            RECOMMENDATIONS
+        </p>
+
+        <h1>
+            Your plan is ready.
+        </h1>
+
+        <p class="lead">
+            {{ result.budget_summary }}
+        </p>
+
+    </div>
+
+
+    <div class="budget-pill">
+
+        Budget
+        ₹{{ "{:,}".format(result.budget) }}
+
+    </div>
+
+</div>
+
+
+<section class="section">
+
+    <h2>
+        Suggested allocation
+    </h2>
+
+
+    <div class="allocation">
+
+        {% for key, value in result.allocation.items() %}
+
+        <div>
+
+            <span>
+                {{ key|title }}
+            </span>
+
+            <strong>
+                ₹{{ "{:,}".format(value) }}
+            </strong>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>
+        Recommendations
+    </h2>
+
+
+    <div class="grid-3">
+
+        {% for item in result.recommendations %}
+
+        <div class="card product-card">
+
+            <span class="tag">
+                {{ item.category }}
+            </span>
+
+
+            <h3>
+                {{ item.name }}
+            </h3>
+
+
+            <p class="price">
+                ₹{{ "{:,}".format(
+                item.estimated_price
+                ) }}
+            </p>
+
+
+            <p>
+                {{ item.reason }}
+            </p>
+
+
+            <div class="product-foot">
+
+                <span>
+                    {{ item.platform }}
+                </span>
+
+                <a href="{{ item.search_url }}" target="_blank" rel="noopener noreferrer">
+                    Search ↗
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>
+        Smart tips
+    </h2>
+
+
+    <ul class="tips">
+
+        {% for tip in result.tips %}
+
+        <li>
+            {{ tip }}
+        </li>
+
+        {% endfor %}
+
+    </ul>
+
+
+    <p class="disclaimer">
+        {{ result.disclaimer }}
+    </p>
+
+</section>
+
+
+<a class="btn secondary" href="/dashboard">
+    Back to dashboard
+</a>
+
+{% endblock %}
